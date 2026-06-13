@@ -26,16 +26,28 @@ document.querySelectorAll('a, button, .tag, .skill-group, .proj-card, .gh-card')
   el.addEventListener('mouseenter', () => {
     cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
     cursorRing.style.transform = 'translate(-50%, -50%) scale(1.5)';
-    cursorRing.style.borderColor = 'rgba(255,77,28,0.8)';
+    cursorRing.style.borderColor = 'rgba(214,74,58,0.8)';
   });
   el.addEventListener('mouseleave', () => {
     cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     cursorRing.style.transform = 'translate(-50%, -50%) scale(1)';
-    cursorRing.style.borderColor = 'rgba(255,77,28,0.5)';
+    cursorRing.style.borderColor = 'rgba(214,74,58,0.6)';
   });
 });
 
-/* ── PARTICLE CANVAS ── */
+/* ── MOBILE NAV TOGGLE ── */
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
+
+/* ── ENHANCED PARTICLE CANVAS ── */
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 let W, H, particles = [], mouse = { x: -9999, y: -9999 };
@@ -45,7 +57,7 @@ function rand(a, b) { return Math.random() * (b - a) + a; }
 
 const LANG_COLORS = {
   Python: '#3572A5', JavaScript: '#f1e05a', HTML: '#e34c26',
-  CSS: '#563d7c', Jupyter: '#DA5B0B', Shell: '#89e051', default: '#e8e6f0'
+  CSS: '#563d7c', Jupyter: '#DA5B0B', Shell: '#89e051', default: '#d64a3a'
 };
 
 class Particle {
@@ -53,32 +65,36 @@ class Particle {
   reset(init) {
     this.x     = rand(0, W);
     this.y     = init ? rand(0, H) : H + 10;
-    this.vx    = rand(-0.15, 0.15);
-    this.vy    = rand(-0.55, -0.1);
-    this.size  = rand(0.8, 2.8);
-    this.alpha = rand(0.2, 0.7);
+    this.vx    = rand(-0.2, 0.2);
+    this.vy    = rand(-0.6, -0.1);
+    this.size  = rand(1, 3.2);
+    this.alpha = rand(0.25, 0.8);
     this.decay = rand(0.0015, 0.0035);
     this.a     = this.alpha;
     this.pulse = rand(0, Math.PI * 2);
-    this.color = Math.random() < 0.12 ? '#ff4d1c'
-               : Math.random() < 0.08 ? '#7c3aed' : '#e8e6f0';
+    this.color = Math.random() < 0.15 ? '#d64a3a'
+                : Math.random() < 0.1 ? '#6b4ba1' : '#1a1a1a';
+    this.mass = rand(0.5, 1.5);
   }
   update() {
     this.pulse += 0.05;
-    const pulseFactor = 1 + Math.sin(this.pulse) * 0.15;
+    const pulseFactor = 1 + Math.sin(this.pulse) * 0.18;
 
     const dx = this.x - mouse.x, dy = this.y - mouse.y;
     const dist = Math.hypot(dx, dy);
-    if (dist < 140) {
-      const f = (140 - dist) / 140 * 0.32;
-      this.vx += (dx / dist) * f;
-      this.vy += (dy / dist) * f;
+    if (dist < 160) {
+      const f = (160 - dist) / 160 * 0.35;
+      this.vx += (dx / dist) * f * (1 / this.mass);
+      this.vy += (dy / dist) * f * (1 / this.mass);
     }
     // Slight gravity towards center-x
-    this.vx += (W / 2 - this.x) * 0.00002;
-
-    this.vx *= 0.98; this.vy *= 0.98;
-    this.x += this.vx; this.y += this.vy;
+    this.vx += (W / 2 - this.x) * 0.000015;
+    
+    // Air resistance
+    this.vx *= 0.985;
+    this.vy *= 0.985;
+    this.x += this.vx;
+    this.y += this.vy;
     this.a -= this.decay;
     this._pulseFactor = pulseFactor;
     if (this.a <= 0 || this.y < -10) this.reset(false);
@@ -91,12 +107,12 @@ class Particle {
     ctx.arc(this.x, this.y, this.size * (this._pulseFactor || 1), 0, Math.PI * 2);
     ctx.fill();
 
-    // Add a soft glow for accent-colored particles
-    if (this.color !== '#e8e6f0') {
-      ctx.globalAlpha = Math.max(0, this.a * 0.25);
+    // Add glow for accent particles
+    if (this.color !== '#1a1a1a') {
+      ctx.globalAlpha = Math.max(0, this.a * 0.3);
       ctx.fillStyle   = this.color;
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
+      ctx.arc(this.x, this.y, this.size * 4.5, 0, Math.PI * 2);
       ctx.fill();
     }
     ctx.restore();
@@ -107,14 +123,13 @@ function drawConnections() {
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
       const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
-      if (d < 95) {
+      if (d < 110) {
         ctx.save();
-        ctx.globalAlpha = (1 - d / 95) * 0.09 * Math.min(particles[i].a, particles[j].a);
+        ctx.globalAlpha = (1 - d / 110) * 0.11 * Math.min(particles[i].a, particles[j].a);
 
-        // Color the connection line based on particle colors
-        const hasAccent = particles[i].color === '#ff4d1c' || particles[j].color === '#ff4d1c';
-        ctx.strokeStyle = hasAccent ? '#ff4d1c' : '#e8e6f0';
-        ctx.lineWidth = 0.5;
+        const hasAccent = particles[i].color === '#d64a3a' || particles[j].color === '#d64a3a';
+        ctx.strokeStyle = hasAccent ? '#d64a3a' : '#1a1a1a';
+        ctx.lineWidth = 0.7;
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
@@ -125,24 +140,25 @@ function drawConnections() {
   }
 }
 
-// Shooting star effect
+// Enhanced Shooting Star effect
 class ShootingStar {
   constructor() { this.reset(); }
   reset() {
     this.x   = rand(0, W);
     this.y   = rand(0, H * 0.4);
-    this.len = rand(40, 100);
-    this.speed = rand(6, 14);
+    this.len = rand(50, 120);
+    this.speed = rand(7, 16);
     this.angle = rand(20, 50) * Math.PI / 180;
     this.alpha = 0;
     this.life  = 0;
-    this.maxLife = rand(40, 80);
-    this.active = Math.random() < 0.005; // rare
+    this.maxLife = rand(50, 100);
+    this.active = Math.random() < 0.006;
+    this.color = Math.random() < 0.5 ? '#d64a3a' : '#6b4ba1';
   }
   update() {
-    if (!this.active) { if (Math.random() < 0.001) { this.reset(); this.active = true; } return; }
+    if (!this.active) { if (Math.random() < 0.0015) { this.reset(); this.active = true; } return; }
     this.life++;
-    this.alpha = this.life < 10 ? this.life / 10 : Math.max(0, 1 - (this.life - 10) / (this.maxLife - 10));
+    this.alpha = this.life < 12 ? this.life / 12 : Math.max(0, 1 - (this.life - 12) / (this.maxLife - 12));
     this.x += Math.cos(this.angle) * this.speed;
     this.y += Math.sin(this.angle) * this.speed;
     if (this.life >= this.maxLife) { this.active = false; }
@@ -150,16 +166,17 @@ class ShootingStar {
   draw() {
     if (!this.active || this.alpha <= 0) return;
     ctx.save();
-    ctx.globalAlpha = this.alpha * 0.7;
+    ctx.globalAlpha = this.alpha * 0.8;
     const grd = ctx.createLinearGradient(
       this.x, this.y,
       this.x - Math.cos(this.angle) * this.len,
       this.y - Math.sin(this.angle) * this.len
     );
-    grd.addColorStop(0, 'rgba(255,77,28,0.9)');
+    grd.addColorStop(0, `rgba(${this.color === '#d64a3a' ? '214,74,58' : '107,75,161'},0.95)`);
     grd.addColorStop(1, 'transparent');
     ctx.strokeStyle = grd;
-    ctx.lineWidth   = 1.5;
+    ctx.lineWidth   = 2;
+    ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
     ctx.lineTo(this.x - Math.cos(this.angle) * this.len, this.y - Math.sin(this.angle) * this.len);
@@ -168,20 +185,72 @@ class ShootingStar {
   }
 }
 
+// Orbital particles for tech vibe
+class OrbitalParticle {
+  constructor(centerX, centerY) {
+    this.centerX = centerX;
+    this.centerY = centerY;
+    this.radius = rand(40, 120);
+    this.angle = rand(0, Math.PI * 2);
+    this.speed = rand(0.002, 0.006);
+    this.size = rand(1.5, 2.5);
+    this.color = Math.random() < 0.5 ? '#d64a3a' : '#6b4ba1';
+    this.opacity = rand(0.3, 0.7);
+  }
+  update() {
+    this.angle += this.speed;
+    this.x = this.centerX + Math.cos(this.angle) * this.radius;
+    this.y = this.centerY + Math.sin(this.angle) * this.radius;
+  }
+  draw() {
+    ctx.save();
+    ctx.globalAlpha = this.opacity;
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = this.opacity * 0.4;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
 let shootingStars = [];
+let orbitalParticles = [];
 
 function initParticles() {
   particles = [];
-  const n = Math.min(Math.floor(W * H / 5000), 220);
+  const n = Math.min(Math.floor(W * H / 4500), 280);
   for (let i = 0; i < n; i++) particles.push(new Particle());
-  shootingStars = Array.from({ length: 3 }, () => new ShootingStar());
+  shootingStars = Array.from({ length: 4 }, () => new ShootingStar());
+  
+  // Add orbital particles for tech aesthetic
+  orbitalParticles = [];
+  for (let i = 0; i < 3; i++) {
+    orbitalParticles.push(new OrbitalParticle(W * (0.3 + i * 0.2), H * 0.4));
+  }
 }
 
 function loop() {
   ctx.clearRect(0, 0, W, H);
+  
+  // Draw orbital paths
+  ctx.save();
+  ctx.strokeStyle = 'rgba(212, 74, 58, 0.08)';
+  ctx.lineWidth = 1;
+  orbitalParticles.forEach(op => {
+    ctx.beginPath();
+    ctx.arc(op.centerX, op.centerY, op.radius, 0, Math.PI * 2);
+    ctx.stroke();
+  });
+  ctx.restore();
+  
   drawConnections();
   particles.forEach(p => { p.update(); p.draw(); });
   shootingStars.forEach(s => { s.update(); s.draw(); });
+  orbitalParticles.forEach(o => { o.update(); o.draw(); });
   requestAnimationFrame(loop);
 }
 
@@ -352,7 +421,7 @@ document.querySelectorAll('.photo-cell').forEach(cell => {
       position: 'absolute',
       width: '0', height: '0',
       borderRadius: '50%',
-      background: 'rgba(255,77,28,0.3)',
+      background: 'rgba(214,74,58,0.4)',
       left: (e.clientX - rect.left) + 'px',
       top:  (e.clientY - rect.top)  + 'px',
       transform: 'translate(-50%,-50%)',
