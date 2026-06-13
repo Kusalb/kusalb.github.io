@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kusal Bista — Data & AI Engineer. Master's in AI/ML from University of Adelaide. Expert in Power BI, Python, LLMs, and full-stack development.">
+<meta name="theme-color" content="#d64a3a">
 <title>Kusal Bista — Data & AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="icon_kb.svg">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="preload" as="style">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,15 +20,14 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">KB<em>.</em></a>
-  <button class="nav-toggle" id="nav-toggle">☰</button>
-  <ul class="nav-links" id="nav-menu">
+  <a class="nav-logo" href="#home">KB<em>.</em></a>
+  <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+  <ul id="nav-menu" class="nav-links">
     <li><a href="#about">about</a></li>
     <li><a href="#skills">skills</a></li>
     <li><a href="#experience">work</a></li>
-    <li><a href="#github">github</a></li>
     <li><a href="#projects">projects</a></li>
-    <li><a href="#blog">blog</a></li>
+    <li><a href="#github">github</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
@@ -41,8 +43,9 @@
       <span class="it">Bista</span>
     </h1>
     <p class="hero-role">
-      Data &amp; AI Engineer &nbsp;·&nbsp; Master's of AI/ML, University of Adelaide<br>
-      Power BI &nbsp;·&nbsp; SQL &nbsp;·&nbsp; Python &nbsp;·&nbsp; LLMs &nbsp;·&nbsp; Deep Learning
+      Data <span class="divider">·</span> <span class="skills-highlight">AI Engineer</span>
+      <br>Master's of AI/ML, University of Adelaide<br>
+      <span class="skills-highlight">Power BI</span> <span class="divider">·</span> SQL <span class="divider">·</span> <span class="skills-highlight">Python</span> <span class="divider">·</span> LLMs <span class="divider">·</span> Deep Learning
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-glow">Get in Touch ↗</a>
@@ -56,7 +59,7 @@
       <div class="hero-photo-placeholder">
         <div class="avatar-ring" style="width:150px; height:150px; border-radius:50%; overflow:hidden;">
           <img src="kusalb.png" class="hero-photo" alt="Kusal Bista"
-               style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+               style="width:100%; height:100%; object-fit:cover; border-radius:50%;" loading="lazy">
         </div>
         <span class="avatar-name">Kusal Bista</span>
       </div>
@@ -105,9 +108,9 @@
       <div class="sec-label reveal">01 — About</div>
       <h2 class="sec-title reveal reveal-delay-1">Data mind.<br><em>Human</em> touch.</h2>
       <div class="about-body reveal reveal-delay-2">
-        <p>I'm a <strong>data and AI specialist</strong> with a Master's in AI/ML from the University of Adelaide and a background spanning full-stack engineering, business intelligence, and finance systems.</p>
+        <p>I'm a <strong>data and AI specialist</strong> with a Master's in AI/ML from the University of Adelaide and a background spanning full-stack engineering, business intelligence, and financial systems.</p>
         <p>From building HR systems in Kathmandu to designing Power BI dashboards for aged-care providers in Adelaide — I bridge <strong>technical depth with real business context</strong>.</p>
-        <p>I've led hackathon-winning teams, published LLM research, and worn many hats: developer, analyst, rostering officer, finance systems builder. Currently completing a <strong>Professional Year in Computer Science</strong> and exploring the intersection of AI/ML with enterprise data strategy.</p>
+        <p>I've led hackathon-winning teams, published LLM research, and worn many hats: developer, analyst, rostering officer, finance systems builder. Currently completing a <strong>Professional Year in Computer Science</strong> to further unlock opportunities in Australia's AI ecosystem.</p>
       </div>
     </div>
     <div class="about-stats reveal reveal-delay-2">
@@ -162,11 +165,11 @@
       <div class="tl-dot"></div>
       <div class="tl-meta"><span class="tl-date">May 2026 — Present</span><span class="tl-badge">Current</span></div>
       <div class="tl-role">ICT Data Analyst</div>
-      <div class="tl-org">Helping Hand · Adelaide, SA</div>
+      <div class="tl-org">Helping Hand Aged Care · Adelaide, SA</div>
       <ul class="tl-list">
-        <li>Develop and maintain data analytics solutions supporting aged-care operations and business intelligence</li>
-        <li>Design and optimize ETL pipelines for real-time data integration from multiple systems</li>
-        <li>Create advanced Power BI dashboards and reports for executive decision-making and operational insights</li>
+        <li>Advanced analytics on aged care operations, financial performance, and resident services</li>
+        <li>Design and deploy Power BI dashboards for strategic decision-making across leadership teams</li>
+        <li>Develop ETL pipelines to consolidate data from multiple systems into unified data warehouse</li>
       </ul>
     </div>
     <div class="tl-item">
@@ -244,7 +247,7 @@
       <div class="edu-deg">Master of AI & Machine Learning</div>
       <div class="edu-sch">University of Adelaide · 2023–2025</div>
       <div class="edu-detail">GPA 6.28 / 7.0 · AQF Level 9</div>
-      <p style="margin-top:0.8rem;font-family:var(--sans);font-size:0.8rem;color:var(--muted);line-height:1.7">High Distinctions in Big Data Analysis, AI/ML Research Project, Using ML Tools (94/100)</p>
+      <p style="margin-top:0.8rem;font-family:var(--font-sans);font-size:0.8rem;color:var(--muted);line-height:1.7">High Distinctions in Big Data Analysis, AI/ML Research Project, Using ML Tools (94/100)</p>
     </div>
     <div class="edu-card reveal reveal-delay-1">
       <div class="edu-deg">Professional Year — Computer Science</div>
@@ -258,7 +261,7 @@
     <div class="edu-card reveal reveal-delay-3">
       <div class="edu-deg">Key Coursework</div>
       <div class="edu-sch">University of Adelaide</div>
-      <p style="margin-top:0.7rem;font-family:var(--sans);font-size:0.8rem;color:var(--muted);line-height:1.8">NLP · Deep Learning · Computer Vision · Mining Big Data · Statistical Inference · Time Series Analysis</p>
+      <p style="margin-top:0.7rem;font-family:var(--font-sans);font-size:0.8rem;color:var(--muted);line-height:1.8">NLP · Deep Learning · Computer Vision · Mining Big Data · Statistical Inference · Time Series Analysis · Distributed Computing</p>
     </div>
   </div>
 </section>
@@ -268,10 +271,10 @@
   <div class="sec-label reveal">05 — Certifications</div>
   <h2 class="sec-title reveal reveal-delay-1">Credentials &amp;<br><em>licences</em></h2>
   <div class="certs-grid">
-    <div class="cert-card reveal"><span class="cert-icon">🔮</span><div class="cert-name">Oracle Fusion AI Agent Studio</div><div class="cert-iss">Oracle University</div><div class="cert-date">2024</div></div>
-    <div class="cert-card reveal reveal-delay-1"><span class="cert-icon">📊</span><div class="cert-name">Google Business Intelligence</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2024</div></div>
-    <div class="cert-card reveal reveal-delay-2"><span class="cert-icon">🗄️</span><div class="cert-name">Data Models & Pipelines</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2023</div></div>
-    <div class="cert-card reveal reveal-delay-3"><span class="cert-icon">📈</span><div class="cert-name">Dashboards & Reports</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2023</div></div>
+    <div class="cert-card reveal"><span class="cert-icon">🔮</span><div class="cert-name">Oracle Fusion AI Agent Studio</div><div class="cert-iss">Oracle University</div><div class="cert-date">2025</div></div>
+    <div class="cert-card reveal reveal-delay-1"><span class="cert-icon">📊</span><div class="cert-name">Google Business Intelligence</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2025</div></div>
+    <div class="cert-card reveal reveal-delay-2"><span class="cert-icon">🗄️</span><div class="cert-name">Data Models & Pipelines</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2024</div></div>
+    <div class="cert-card reveal reveal-delay-3"><span class="cert-icon">📈</span><div class="cert-name">Dashboards & Reports</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2024</div></div>
   </div>
 </section>
 
@@ -283,7 +286,7 @@
     <div class="proj-card span2 reveal">
       <div class="proj-num">P.01 — FEATURED RESEARCH</div>
       <div class="proj-title">LLM Research: Math Word Problems</div>
-      <div class="proj-desc">In collaboration with Dr. Savitha Sam Abraham — led a study enhancing LLM performance on mathematical word problems using Chain-of-Thought prompting, Retrieval-Augmented Generation, and few-shot examples.</div>
+      <div class="proj-desc">In collaboration with Dr. Savitha Sam Abraham — led a study enhancing LLM performance on mathematical word problems using Chain-of-Thought prompting, Retrieval-Augmented Generation, and few-shot learning on GSM8K dataset with LLaMA model.</div>
       <div class="proj-tags">
         <span class="ptag">LLMs</span><span class="ptag">RAG</span><span class="ptag">Chain-of-Thought</span><span class="ptag">LLaMA</span><span class="ptag">GSM8K</span><span class="ptag">Prompt Engineering</span>
       </div>
@@ -316,12 +319,12 @@
       <div class="sec-label reveal">07 — Open Source</div>
       <h2 class="sec-title reveal reveal-delay-1" style="margin-bottom:0">GitHub<br><em>repositories</em></h2>
     </div>
-    <a class="gh-link reveal" href="https://github.com/kusalb" target="_blank"><span>View all on GitHub ↗</span></a>
+    <a class="gh-link reveal" href="https://github.com/kusalb" target="_blank" rel="noopener noreferrer"><span>View all on GitHub ↗</span></a>
   </div>
   <div id="gh-grid">
     <div class="gh-loading">
       <span class="dot">·</span><span class="dot">·</span><span class="dot">·</span>
-      &nbsp; Fetching repos from GitHub
+      &nbsp; Loading repositories
     </div>
   </div>
 </section>
@@ -355,20 +358,19 @@
   <p class="contact-sub reveal reveal-delay-1">Open to data analytics, BI, AI/ML & full-stack roles · Adelaide, Australia</p>
   <a href="mailto:kusal.more@gmail.com" class="contact-email reveal reveal-delay-2">kusal.more@gmail.com</a>
   <div class="contact-links reveal reveal-delay-3">
-    <a href="https://github.com/kusalb" class="clink" target="_blank"><span>↗ GitHub</span></a>
-    <a href="https://www.instagram.com/gud_kush_/" class="clink" target="_blank"><span>↗ Instagram</span></a>
-    <a href="https://www.linkedin.com/in/kusal-bista-657422132" class="clink" target="_blank"><span>↗ LinkedIn</span></a>
+    <a href="https://github.com/kusalb" class="clink" target="_blank" rel="noopener noreferrer"><span>↗ GitHub</span></a>
+    <a href="https://www.instagram.com/gud_kush_/" class="clink" target="_blank" rel="noopener noreferrer"><span>↗ Instagram</span></a>
+    <a href="https://www.linkedin.com/in/kusal-bista-657422132" class="clink" target="_blank" rel="noopener noreferrer"><span>↗ LinkedIn</span></a>
     <a href="tel:61451920541" class="clink"><span>↗ +61 451 920 541</span></a>
     <a class="clink"><span>↗ Kurralta Park, Adelaide 5037</span></a>
   </div>
   <div class="footer">
     <span>Kusal Bista · 2025</span>
     <span>Master's in AI/ML · University of Adelaide</span>
-    <span>Built with intent.</span>
+    <span>Built with intent. 🚀</span>
   </div>
 </section>
 
-
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>
