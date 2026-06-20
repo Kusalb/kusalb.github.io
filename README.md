@@ -1,4 +1,4 @@
-# Kusal Bista — Immersive 3D AI & Data Portfolio
+# Kusal Bista — AI & Data Portfolio
 
 A zero-build portfolio designed for GitHub Pages. It uses semantic HTML, modern CSS and framework-free JavaScript only.
 
@@ -48,52 +48,3 @@ The deployed website requires only:
 
 There is no React, Vite, npm, Python, server, database, runtime API request or build step.
 
-## Deploy to GitHub Pages
-
-1. Extract the ZIP.
-2. Copy every extracted file and folder directly into the root of `Kusalb/kusalb.github.io`.
-3. Commit and push to the `main` branch.
-4. Open **Settings → Pages**.
-5. Choose **Deploy from a branch**, `main`, and `/ (root)`.
-
-The included `CNAME` keeps `kusalbista.com.np` connected.
-
-```bash
-git clone https://github.com/Kusalb/kusalb.github.io.git
-cd kusalb.github.io
-
-# Copy the extracted files into this directory.
-git add .
-git commit -m "Refine portfolio motion and project signal deck"
-git push origin main
-```
-
-## Preview locally
-
-Double-click `index.html`. The site works directly from the filesystem as well as on GitHub Pages. Google Fonts load when an internet connection is available; system fallbacks are included.
-
-## Change the six slider projects
-
-Edit `data.js`. The slider reads the six static project objects in `SITE_DATA.githubProjects`. Keep exactly six objects for the intended deck layout. Every project is stored locally:
-
-```js
-{
-  repo: "repository_name",
-  title: "Human-readable project title",
-  category: "ai",
-  featured: true,
-  summary: "Outcome-focused project description.",
-  technologies: ["LLMs", "RAG", "Jupyter"],
-  language: "Jupyter Notebook",
-  year: "2024",
-  accent: "violet"
-}
-```
-
-## Certification links
-
-Credential names are based on the supplied professional profile. Where a unique public verification URL was unavailable, the card links to the LinkedIn certification section. Replace `credentialUrl` in `data.js` when a direct verification link becomes available.
-
-## Privacy
-
-The public portfolio displays Adelaide, South Australia, but does not expose a suburb, postcode or phone number.
