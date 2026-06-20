@@ -1,0 +1,17 @@
+{
+  "name": "Kusal Bista \u2014 AI Engineer & IT Data Analyst",
+  "short_name": "Kusal Bista",
+  "description": "Applied AI, business intelligence and data engineering portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "icon-kb.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

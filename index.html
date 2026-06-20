@@ -1,376 +1,664 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kusal Bista — Data & AI Engineer. Master's in AI/ML from University of Adelaide. Expert in Power BI, Python, LLMs, and full-stack development.">
-<meta name="theme-color" content="#d64a3a">
-<title>Kusal Bista — Data & AI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" href="icon_kb.svg">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="preload" as="style">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kusal Bista is an AI Engineer and IT Data Analyst in Adelaide building decision-ready dashboards, data pipelines, machine-learning systems and full-stack data products.">
+  <meta name="author" content="Kusal Bista">
+  <meta name="theme-color" content="#07111f">
+  <meta name="color-scheme" content="dark light">
+
+  <title>Kusal Bista — AI Engineer & IT Data Analyst</title>
+
+  <link rel="canonical" href="https://kusalbista.com.np/">
+  <link rel="icon" type="image/svg+xml" href="icon-kb.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kusal Bista — AI Engineer & IT Data Analyst">
+  <meta property="og:description" content="Applied AI, business intelligence, data engineering and production-minded analytics.">
+  <meta property="og:url" content="https://kusalbista.com.np/">
+  <meta property="og:image" content="https://kusalbista.com.np/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kusal Bista — AI Engineer and IT Data Analyst">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kusal Bista — AI Engineer & IT Data Analyst">
+  <meta name="twitter:description" content="Applied AI, business intelligence, data engineering and production-minded analytics.">
+  <meta name="twitter:image" content="https://kusalbista.com.np/assets/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (() => {
+      let stored = null;
+      try { stored = localStorage.getItem("kb-theme"); } catch (_) { /* storage can be unavailable in previews */ }
+      const preferred = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.dataset.theme = stored || preferred;
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kusal Bista",
+    "url": "https://kusalbista.com.np/",
+    "image": "https://kusalbista.com.np/assets/kusal-bista.png",
+    "jobTitle": "IT Data Analyst",
+    "description": "AI Engineer and IT Data Analyst specialising in business intelligence, machine learning, ETL and full-stack data products.",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Adelaide"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Adelaide",
+      "addressRegion": "South Australia",
+      "addressCountry": "AU"
+    },
+    "sameAs": [
+      "https://github.com/kusalb",
+      "https://www.linkedin.com/in/kusal-bista-657422132/"
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Power BI",
+      "SQL",
+      "Python",
+      "Data Engineering",
+      "ETL",
+      "Large Language Models",
+      "Business Intelligence"
+    ]
+  }
+  </script>
 </head>
-<body>
 
-<!-- Custom Cursor -->
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
+<body class="is-loading">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#home">KB<em>.</em></a>
-  <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-  <ul id="nav-menu" class="nav-links">
-    <li><a href="#about">about</a></li>
-    <li><a href="#skills">skills</a></li>
-    <li><a href="#experience">work</a></li>
-    <li><a href="#projects">projects</a></li>
-    <li><a href="#github">github</a></li>
-    <li><a href="#contact">contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <canvas id="particle-canvas"></canvas>
-
-  <div class="hero-left">
-    <div class="hero-eyebrow">Adelaide, Australia · Open to Work</div>
-    <h1 class="hero-name">
-      Kusal
-      <span class="it">Bista</span>
-    </h1>
-    <p class="hero-role">
-      Data <span class="divider">·</span> <span class="skills-highlight">AI Engineer</span>
-      <br>Master's of AI/ML, University of Adelaide<br>
-      <span class="skills-highlight">Power BI</span> <span class="divider">·</span> SQL <span class="divider">·</span> <span class="skills-highlight">Python</span> <span class="divider">·</span> LLMs <span class="divider">·</span> Deep Learning
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-glow">Get in Touch ↗</a>
-      <a href="#experience" class="btn btn-ghost">View Work</a>
+  <div class="intro-gate" id="intro-gate" aria-hidden="true">
+    <div class="intro-core">
+      <span class="intro-ring intro-ring-a"></span>
+      <span class="intro-ring intro-ring-b"></span>
+      <strong>KB</strong>
     </div>
+    <div class="intro-copy"><span>INITIALISING</span><i></i><span>INTELLIGENCE SYSTEM</span></div>
   </div>
 
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true">
+    <b>SCROLL</b>
+    <i></i>
+    <span></span>
+    <output id="scroll-percent">00</output>
+  </div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-aura" id="cursor-aura" aria-hidden="true"></div>
+  <div class="ambient-depth" aria-hidden="true">
+    <span class="ambient-line ambient-line-a"></span>
+    <span class="ambient-line ambient-line-b"></span>
+    <span class="ambient-line ambient-line-c"></span>
+  </div>
 
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <div class="hero-photo-placeholder">
-        <div class="avatar-ring" style="width:150px; height:150px; border-radius:50%; overflow:hidden;">
-          <img src="kusalb.png" class="hero-photo" alt="Kusal Bista"
-               style="width:100%; height:100%; object-fit:cover; border-radius:50%;" loading="lazy">
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Kusal Bista, home">
+        <span class="brand-mark">KB</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+
+      <div class="nav-links" id="nav-menu">
+        <a href="#impact">Impact</a>
+        <a href="#projects">Projects</a>
+        <a href="#github">Lab</a>
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-pad" aria-labelledby="hero-title">
+      <canvas id="neural-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="hero-3d-world" id="hero-3d-world" aria-hidden="true">
+        <div class="world-grid"></div>
+        <div class="data-core">
+          <span class="core-shell core-shell-a"></span>
+          <span class="core-shell core-shell-b"></span>
+          <span class="core-shell core-shell-c"></span>
+          <span class="core-light"></span>
         </div>
-        <span class="avatar-name">Kusal Bista</span>
+        <div class="wire-cube wire-cube-a">
+          <i class="cube-face cube-front"></i><i class="cube-face cube-back"></i>
+          <i class="cube-edge edge-one"></i><i class="cube-edge edge-two"></i>
+          <i class="cube-edge edge-three"></i><i class="cube-edge edge-four"></i>
+        </div>
+        <div class="wire-cube wire-cube-b">
+          <i class="cube-face cube-front"></i><i class="cube-face cube-back"></i>
+          <i class="cube-edge edge-one"></i><i class="cube-edge edge-two"></i>
+          <i class="cube-edge edge-three"></i><i class="cube-edge edge-four"></i>
+        </div>
+        <span class="data-plane plane-a"><b>01</b><em>MODEL</em></span>
+        <span class="data-plane plane-b"><b>92%</b><em>SIGNAL</em></span>
+        <span class="data-plane plane-c"><b>∞</b><em>ITERATE</em></span>
       </div>
-      <div class="hero-photo-tag">Master's in AI/ML · Univ. of Adelaide</div>
-    </div>
-  </div>
 
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span>Scroll</span>
-  </div>
-</section>
+      <div class="container hero-grid">
+        <div class="hero-copy" data-depth-layer="2">
+          <div class="eyebrow reveal">
+            <span class="status-pulse" aria-hidden="true"></span>
+            Adelaide, Australia · Open to data, BI & applied-AI roles
+          </div>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">Power BI</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">PostgreSQL</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Python</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Machine Learning</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Deep Learning</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">NLP & LLMs</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">ETL Pipelines</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Computer Vision</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Django REST</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Oracle Fusion</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">RAG & Prompting</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Power BI</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">PostgreSQL</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Python</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Machine Learning</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Deep Learning</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">NLP & LLMs</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">ETL Pipelines</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Computer Vision</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Django REST</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">Oracle Fusion</span><span class="marquee-item hi">✦</span>
-    <span class="marquee-item">RAG & Prompting</span><span class="marquee-item hi">✦</span>
-  </div>
-</div>
+          <h1 id="hero-title" class="display-title reveal">
+            I build intelligence
+            <span>people can act on.</span>
+          </h1>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div>
-      <div class="sec-label reveal">01 — About</div>
-      <h2 class="sec-title reveal reveal-delay-1">Data mind.<br><em>Human</em> touch.</h2>
-      <div class="about-body reveal reveal-delay-2">
-        <p>I'm a <strong>data and AI specialist</strong> with a Master's in AI/ML from the University of Adelaide and a background spanning full-stack engineering, business intelligence, and financial systems.</p>
-        <p>From building HR systems in Kathmandu to designing Power BI dashboards for aged-care providers in Adelaide — I bridge <strong>technical depth with real business context</strong>.</p>
-        <p>I've led hackathon-winning teams, published LLM research, and worn many hats: developer, analyst, rostering officer, finance systems builder. Currently completing a <strong>Professional Year in Computer Science</strong> to further unlock opportunities in Australia's AI ecosystem.</p>
+          <p class="hero-intro reveal">
+            AI Engineer and IT Data Analyst turning operational, financial and customer data into
+            <strong>decision-ready dashboards</strong>, reliable pipelines and applied machine-learning systems.
+          </p>
+
+          <div class="role-loop reveal" aria-label="Specialisms">
+            <span class="role-prefix">Focused on</span>
+            <span class="role-value" id="role-value">decision intelligence</span>
+          </div>
+
+          <div class="hero-actions reveal">
+            <a class="button button-primary magnetic" href="#projects">
+              Explore selected work
+              <span aria-hidden="true">↘</span>
+            </a>
+            <a class="button button-secondary" href="assets/Kusal-Bista-Profile.pdf" target="_blank" rel="noopener">
+              View profile PDF
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="interaction-note reveal" aria-hidden="true"><span></span> Move through the interface</div>
+
+          <div class="hero-proof reveal" aria-label="Professional highlights">
+            <div>
+              <strong data-count="8" data-suffix="+">8+</strong>
+              <span>years across data, software & systems</span>
+            </div>
+            <div>
+              <strong data-count="37">37</strong>
+              <span>public GitHub repositories</span>
+            </div>
+            <div>
+              <strong data-count="2" data-suffix="×">2×</strong>
+              <span>hackathon recognition</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-visual reveal" data-depth-layer="4" aria-label="Kusal Bista profile">
+          <div class="portrait-orbit" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="orbit-node node-a"></span>
+            <span class="orbit-node node-b"></span>
+            <span class="orbit-node node-c"></span>
+          </div>
+
+          <div class="portrait-card tilt-card depth-card">
+            <div class="portrait-frame">
+              <picture>
+                <source srcset="assets/kusal-bista.webp" type="image/webp">
+                <img
+                  src="assets/kusal-bista.png"
+                  width="800"
+                  height="800"
+                  alt="Portrait of Kusal Bista"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async">
+              </picture>
+              <div class="portrait-scan" aria-hidden="true"></div>
+            </div>
+
+            <div class="portrait-meta">
+              <div>
+                <span class="mono-label">CURRENT SIGNAL</span>
+                <strong>AI × Data × Business</strong>
+              </div>
+              <span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </div>
+          </div>
+
+          <div class="floating-chip chip-one">
+            <span class="chip-icon">◆</span>
+            Power BI · SQL
+          </div>
+          <div class="floating-chip chip-two">
+            <span class="chip-icon">⌁</span>
+            LLMs · RAG
+          </div>
+          <div class="floating-chip chip-three">
+            <span class="chip-icon">↯</span>
+            Python · ETL
+          </div>
+        </aside>
       </div>
-    </div>
-    <div class="about-stats reveal reveal-delay-2">
-      <div class="astat"><div class="num">8+</div><div class="lbl">Years Experience</div></div>
-      <div class="astat"><div class="num">6+</div><div class="lbl">Industries</div></div>
-      <div class="astat"><div class="num">2×</div><div class="lbl">Hackathon Awards</div></div>
-      <div class="astat"><div class="num">4+</div><div class="lbl">Certifications</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="sec-label reveal">02 — Skills</div>
-  <h2 class="sec-title reveal reveal-delay-1">What I<br><em>work with</em></h2>
-  <div class="skills-grid">
-    <div class="skill-group reveal">
-      <div class="sg-title">Data & Analytics</div>
-      <div class="tags">
-        <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">MySQL</span>
-        <span class="tag">PostgreSQL</span><span class="tag">Advanced Excel</span>
-        <span class="tag">ETL Pipelines</span><span class="tag">Data Modelling</span><span class="tag">Data Governance</span>
+      <div class="hero-ribbon" aria-label="Core technologies">
+        <div class="ribbon-track">
+          <span>Power BI</span><i>✦</i><span>SQL</span><i>✦</i><span>Python</span><i>✦</i>
+          <span>Data Modelling</span><i>✦</i><span>ETL</span><i>✦</i><span>LLMs</span><i>✦</i>
+          <span>Deep Learning</span><i>✦</i><span>Django</span><i>✦</i><span>Oracle Fusion</span><i>✦</i>
+          <span aria-hidden="true">Power BI</span><i aria-hidden="true">✦</i><span aria-hidden="true">SQL</span><i aria-hidden="true">✦</i><span aria-hidden="true">Python</span><i aria-hidden="true">✦</i>
+          <span aria-hidden="true">Data Modelling</span><i aria-hidden="true">✦</i><span aria-hidden="true">ETL</span><i aria-hidden="true">✦</i><span aria-hidden="true">LLMs</span><i aria-hidden="true">✦</i>
+          <span aria-hidden="true">Deep Learning</span><i aria-hidden="true">✦</i><span aria-hidden="true">Django</span><i aria-hidden="true">✦</i><span aria-hidden="true">Oracle Fusion</span><i aria-hidden="true">✦</i>
+        </div>
       </div>
-    </div>
-    <div class="skill-group reveal reveal-delay-1">
-      <div class="sg-title">AI & Machine Learning</div>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">Pandas / NumPy</span>
-        <span class="tag">Deep Learning</span><span class="tag">NLP / LLMs</span>
-        <span class="tag">Computer Vision</span><span class="tag">LSTM / ConvLSTM</span>
-        <span class="tag">RAG</span><span class="tag">Prompt Engineering</span>
+    </section>
+
+    <section class="section section-pad depth-section" id="impact" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">01 / What I deliver</span>
+            <h2 id="impact-title">From raw signals to<br><em>business decisions.</em></h2>
+          </div>
+          <p>
+            I work across the full decision stack—from source systems and data quality to models,
+            dashboards and stakeholder-ready narratives.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card reveal tilt-card depth-card">
+            <span class="card-index">01</span>
+            <div class="capability-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M10 48V32M24 48V20M38 48V26M52 48V10"></path>
+                <path d="M7 51h50"></path>
+              </svg>
+            </div>
+            <h3>Decision intelligence</h3>
+            <p>Executive-ready Power BI products, semantic models and KPI systems that make complex operations understandable.</p>
+            <ul class="tag-list" aria-label="Decision intelligence skills">
+              <li>Power BI</li><li>DAX</li><li>SQL</li><li>Data modelling</li>
+            </ul>
+          </article>
+
+          <article class="capability-card reveal tilt-card depth-card">
+            <span class="card-index">02</span>
+            <div class="capability-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <circle cx="18" cy="18" r="7"></circle>
+                <circle cx="46" cy="18" r="7"></circle>
+                <circle cx="32" cy="46" r="7"></circle>
+                <path d="M24 21l15 0M22 24l7 15M42 24l-7 15"></path>
+              </svg>
+            </div>
+            <h3>Applied AI</h3>
+            <p>Research-driven ML prototypes across LLM reasoning, NLP, forecasting, recommendations and computer vision.</p>
+            <ul class="tag-list" aria-label="Applied AI skills">
+              <li>PyTorch</li><li>TensorFlow</li><li>RAG</li><li>Time series</li>
+            </ul>
+          </article>
+
+          <article class="capability-card reveal tilt-card depth-card">
+            <span class="card-index">03</span>
+            <div class="capability-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M12 18h16v12H12zM36 34h16v12H36z"></path>
+                <path d="M28 24h10a8 8 0 0 1 8 8v2M36 40H26a8 8 0 0 1-8-8v-2"></path>
+              </svg>
+            </div>
+            <h3>Data products</h3>
+            <p>Reliable ETL workflows, APIs and full-stack systems designed around maintainability, governance and real users.</p>
+            <ul class="tag-list" aria-label="Data product skills">
+              <li>Python</li><li>Django</li><li>REST APIs</li><li>PostgreSQL</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-    <div class="skill-group reveal reveal-delay-2">
-      <div class="sg-title">Engineering & Tools</div>
-      <div class="tags">
-        <span class="tag">Django</span><span class="tag">REST API</span>
-        <span class="tag">Git / GitHub</span><span class="tag">Agile</span>
-        <span class="tag">CI/CD</span><span class="tag">Oracle Fusion</span>
-        <span class="tag">Procura</span><span class="tag">Unit Testing</span>
+    </section>
+
+    <section class="section section-pad selected-work depth-section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">02 / Selected work</span>
+            <h2 id="projects-title">High-value systems,<br><em>not demo clutter.</em></h2>
+          </div>
+          <p>
+            A curated mix of applied research, analytics and product engineering selected for technical depth and business relevance.
+          </p>
+        </div>
+
+        <div class="featured-projects">
+          <article class="featured-project reveal depth-panel">
+            <div class="project-visual visual-llm" aria-hidden="true">
+              <div class="terminal-window">
+                <div class="terminal-head"><i></i><i></i><i></i><span>reasoning_pipeline.py</span></div>
+                <div class="terminal-body">
+                  <p><span>01</span> query → retrieve(context)</p>
+                  <p><span>02</span> examples = few_shot.select()</p>
+                  <p><span>03</span> rationale = chain_of_thought()</p>
+                  <p><span>04</span> answer = llama.generate()</p>
+                  <p class="terminal-success"><span>✓</span> consistency evaluation complete</p>
+                </div>
+              </div>
+              <span class="visual-grid"></span>
+            </div>
+            <div class="project-copy">
+              <div class="project-number">P.01 · FEATURED AI RESEARCH</div>
+              <h3>Improving LLaMA consistency on mathematical reasoning</h3>
+              <p>
+                A research workflow exploring chain-of-thought prompting, retrieval-augmented generation
+                and few-shot examples for mathematical word problems using LLaMA and GSM8K.
+              </p>
+              <div class="project-outcomes">
+                <span>LLM evaluation</span><span>RAG pipeline</span><span>Prompt strategy</span>
+              </div>
+              <a class="text-link" href="https://github.com/Kusalb/Improving_consistency_of_llama" target="_blank" rel="noopener">
+                Inspect the research repository <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="featured-project featured-project-reverse reveal depth-panel">
+            <div class="project-visual visual-energy" aria-hidden="true">
+              <svg viewBox="0 0 700 420" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="energy-fill" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="currentColor" stop-opacity=".35"></stop>
+                    <stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <path class="chart-grid" d="M0 70H700M0 140H700M0 210H700M0 280H700M0 350H700M100 0V420M200 0V420M300 0V420M400 0V420M500 0V420M600 0V420"></path>
+                <path class="chart-area" d="M0 340 C55 305 80 318 125 265 S205 220 250 245 S330 130 380 180 S450 130 495 155 S575 62 620 105 S670 45 700 68 L700 420 L0 420 Z"></path>
+                <path class="chart-line" d="M0 340 C55 305 80 318 125 265 S205 220 250 245 S330 130 380 180 S450 130 495 155 S575 62 620 105 S670 45 700 68"></path>
+              </svg>
+              <div class="model-pills">
+                <span>ARIMA</span><span>RF</span><span>LSTM</span><span class="active">ConvLSTM</span>
+              </div>
+            </div>
+            <div class="project-copy">
+              <div class="project-number">P.02 · FORECASTING</div>
+              <h3>Household energy-demand forecasting</h3>
+              <p>
+                Built and compared classical and deep-learning models for low-energy-house demand,
+                including ARIMA, Random Forest, LSTM and ConvLSTM, with model selection grounded in evaluation metrics.
+              </p>
+              <div class="project-outcomes">
+                <span>Time-series validation</span><span>Model comparison</span><span>Feature analysis</span>
+              </div>
+              <a class="text-link" href="https://github.com/Kusalb/predict_future_energy_use_in_household" target="_blank" rel="noopener">
+                Explore notebooks and methodology <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="featured-project reveal depth-panel">
+            <div class="project-visual visual-bi" aria-hidden="true">
+              <div class="dashboard-shell">
+                <div class="dashboard-side">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="dashboard-main">
+                  <div class="dashboard-metrics">
+                    <i></i><i></i><i></i>
+                  </div>
+                  <div class="dashboard-charts">
+                    <div class="mini-bars"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                    <div class="mini-donut"></div>
+                  </div>
+                  <div class="dashboard-table"><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-copy">
+              <div class="project-number">P.03 · ENTERPRISE ANALYTICS</div>
+              <h3>Aged-care decision intelligence</h3>
+              <p>
+                Business-facing analytics spanning operations, resident services and financial performance:
+                unified data pipelines, trusted KPI definitions and leadership dashboards for faster decisions.
+              </p>
+              <div class="project-outcomes">
+                <span>Power BI</span><span>Multi-system ETL</span><span>Data governance</span>
+              </div>
+              <span class="confidential-note">Professional work · implementation details confidential</span>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="sec-label reveal">03 — Experience</div>
-  <h2 class="sec-title reveal reveal-delay-1">Where I've<br><em>worked</em></h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">May 2026 — Present</span><span class="tl-badge">Current</span></div>
-      <div class="tl-role">ICT Data Analyst</div>
-      <div class="tl-org">Helping Hand Aged Care · Adelaide, SA</div>
-      <ul class="tl-list">
-        <li>Advanced analytics on aged care operations, financial performance, and resident services</li>
-        <li>Design and deploy Power BI dashboards for strategic decision-making across leadership teams</li>
-        <li>Develop ETL pipelines to consolidate data from multiple systems into unified data warehouse</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">Sep 2025 — Present</span><span class="tl-badge">Current</span></div>
-      <div class="tl-role">Accounts Receivables — Finance</div>
-      <div class="tl-org">Helping Hand · Adelaide, SA</div>
-      <ul class="tl-list">
-        <li>Manage resident billing and subsidies in Procura, ensuring compliance through PRODA</li>
-        <li>Process and reconcile fees with audit-ready accuracy; oversee separation and probate accounts</li>
-        <li>Deliver professional service for fee enquiries, credit care, and account queries</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">Mar 2024 — Aug 2025</span></div>
-      <div class="tl-role">Resident Billing & Accounts Officer</div>
-      <div class="tl-org">Greek Orthodox Community of SA · Adelaide</div>
-      <ul class="tl-list">
-        <li>Analysed billing and receivables data in Excel and Power BI; identified anomalies driving process improvements</li>
-        <li>Generated invoices, statements, and refunds maintaining audit-ready financial records</li>
-        <li>Collaborated with finance teams to resolve discrepancies and streamline reporting</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">Dec 2023 — Mar 2024</span></div>
-      <div class="tl-role">Acting Rostering Officer</div>
-      <div class="tl-org">Ridleyton Greek Home for Aged · SA</div>
-      <ul class="tl-list">
-        <li>Managed shift rosters for 150+ staff, ensuring compliance with industrial awards and Fair Work rules</li>
-        <li>Analysed rostering data to identify compliance risks and payroll discrepancies</li>
-        <li>Produced weekly Excel reports on shift coverage, availability, and efficiency metrics</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">Mar 2022 — Jan 2023</span></div>
-      <div class="tl-role">Business System Developer</div>
-      <div class="tl-org">Gaaubesi Logistics · Kathmandu, Nepal</div>
-      <ul class="tl-list">
-        <li>Designed and deployed a full-stack HRMS with payroll, leave tracking, and role-based dashboards</li>
-        <li>Built secure RESTful APIs with unit tests; developed internal CMS and analytics engine</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">Jan 2019 — Sep 2021</span></div>
-      <div class="tl-role">Technical Lead</div>
-      <div class="tl-org">Logispark Technologies · Kathmandu, Nepal</div>
-      <ul class="tl-list">
-        <li>Led architecture and backend development with MySQL/PostgreSQL; implemented predictive analytics models</li>
-        <li>Mentored cross-functional engineering team; established CI/CD pipelines and coding standards</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-meta"><span class="tl-date">Jun 2017 — Oct 2018</span></div>
-      <div class="tl-role">Software Developer & Data Viz Intern</div>
-      <div class="tl-org">Logispark / Deerwalk Education Group</div>
-      <ul class="tl-list">
-        <li>Developed CMS platforms with Python/Django; built real-time Power BI dashboards integrated with SQL</li>
-        <li>Created interactive data visualisation presenting 100 years of educational budget data</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <section class="section section-pad github-lab depth-section" id="github" aria-labelledby="github-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">03 / Open-source lab</span>
+            <h2 id="github-title">Six selected builds.<br><em>One evolving practice.</em></h2>
+          </div>
+          <div class="github-heading-meta">
+            <p>A deliberately small research deck: six repositories that best represent how I investigate, model, test and build.</p>
+            <a class="text-link" href="https://github.com/kusalb" target="_blank" rel="noopener">
+              Enter the complete archive <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="sec-label reveal">04 — Education</div>
-  <h2 class="sec-title reveal reveal-delay-1">Academic<br><em>background</em></h2>
-  <div class="edu-grid">
-    <div class="edu-card reveal">
-      <div class="edu-deg">Master of AI & Machine Learning</div>
-      <div class="edu-sch">University of Adelaide · 2023–2025</div>
-      <div class="edu-detail">GPA 6.28 / 7.0 · AQF Level 9</div>
-      <p style="margin-top:0.8rem;font-family:var(--font-sans);font-size:0.8rem;color:var(--muted);line-height:1.7">High Distinctions in Big Data Analysis, AI/ML Research Project, Using ML Tools (94/100)</p>
-    </div>
-    <div class="edu-card reveal reveal-delay-1">
-      <div class="edu-deg">Professional Year — Computer Science</div>
-      <div class="edu-sch">Performance Education · Sep 2025 – Current</div>
-      <div class="edu-detail">Adelaide, Australia</div>
-    </div>
-    <div class="edu-card reveal reveal-delay-2">
-      <div class="edu-deg">B.Sc. Computer Science & IT</div>
-      <div class="edu-sch">DWIT College, Tribhuvan University · 2015–2019</div>
-    </div>
-    <div class="edu-card reveal reveal-delay-3">
-      <div class="edu-deg">Key Coursework</div>
-      <div class="edu-sch">University of Adelaide</div>
-      <p style="margin-top:0.7rem;font-family:var(--font-sans);font-size:0.8rem;color:var(--muted);line-height:1.8">NLP · Deep Learning · Computer Vision · Mining Big Data · Statistical Inference · Time Series Analysis · Distributed Computing</p>
-    </div>
-  </div>
-</section>
+        <div class="lab-deck reveal depth-panel" id="project-carousel" aria-roledescription="carousel" aria-label="Six selected GitHub projects">
+          <div class="lab-deck-header">
+            <div class="lab-deck-identity">
+              <i aria-hidden="true"></i>
+              <span>KB / RESEARCH ARCHIVE</span>
+            </div>
+            <div class="lab-deck-status">
+              <span>STATIC COLLECTION</span>
+              <strong>06 SIGNALS</strong>
+            </div>
+          </div>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="sec-label reveal">05 — Certifications</div>
-  <h2 class="sec-title reveal reveal-delay-1">Credentials &amp;<br><em>licences</em></h2>
-  <div class="certs-grid">
-    <div class="cert-card reveal"><span class="cert-icon">🔮</span><div class="cert-name">Oracle Fusion AI Agent Studio</div><div class="cert-iss">Oracle University</div><div class="cert-date">2025</div></div>
-    <div class="cert-card reveal reveal-delay-1"><span class="cert-icon">📊</span><div class="cert-name">Google Business Intelligence</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2025</div></div>
-    <div class="cert-card reveal reveal-delay-2"><span class="cert-icon">🗄️</span><div class="cert-name">Data Models & Pipelines</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2024</div></div>
-    <div class="cert-card reveal reveal-delay-3"><span class="cert-icon">📈</span><div class="cert-name">Dashboards & Reports</div><div class="cert-iss">Google / Coursera</div><div class="cert-date">2024</div></div>
-  </div>
-</section>
+          <div class="lab-slider-shell">
+            <button class="lab-nav lab-nav-prev" id="project-previous" type="button" aria-label="Previous project">
+              <span aria-hidden="true">←</span>
+            </button>
 
-<!-- RESEARCH PROJECTS -->
-<section id="projects">
-  <div class="sec-label reveal">06 — Research Projects</div>
-  <h2 class="sec-title reveal reveal-delay-1">Things I've<br><em>built</em></h2>
-  <div class="projects-grid">
-    <div class="proj-card span2 reveal">
-      <div class="proj-num">P.01 — FEATURED RESEARCH</div>
-      <div class="proj-title">LLM Research: Math Word Problems</div>
-      <div class="proj-desc">In collaboration with Dr. Savitha Sam Abraham — led a study enhancing LLM performance on mathematical word problems using Chain-of-Thought prompting, Retrieval-Augmented Generation, and few-shot learning on GSM8K dataset with LLaMA model.</div>
-      <div class="proj-tags">
-        <span class="ptag">LLMs</span><span class="ptag">RAG</span><span class="ptag">Chain-of-Thought</span><span class="ptag">LLaMA</span><span class="ptag">GSM8K</span><span class="ptag">Prompt Engineering</span>
+            <div class="lab-viewport" id="project-viewport" tabindex="0" aria-live="polite">
+              <div class="lab-track" id="github-grid"></div>
+            </div>
+
+            <button class="lab-nav lab-nav-next" id="project-next" type="button" aria-label="Next project">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="lab-deck-footer">
+            <div class="lab-pagination" id="project-pagination" aria-label="Choose project"></div>
+            <div class="lab-readout" aria-hidden="true">
+              <strong id="project-current">01</strong>
+              <span>/ 06</span>
+            </div>
+            <div class="lab-progress" aria-hidden="true"><span id="project-progress"></span></div>
+          </div>
+
+          <p class="lab-instruction">Drag the deck, use the arrow keys, or select a numbered signal.</p>
+        </div>
+
+        <div class="github-profile-card reveal" id="github-profile-card">
+          <div>
+            <span class="mono-label">GITHUB / KUSALB</span>
+            <h3>Building in public since 2017.</h3>
+          </div>
+          <div class="github-stats" aria-label="GitHub profile statistics">
+            <div><strong id="repo-count">37</strong><span>public repos</span></div>
+            <div><strong id="follower-count">59</strong><span>followers</span></div>
+            <div><strong id="github-location">Adelaide</strong><span>location</span></div>
+          </div>
+          <a class="button button-secondary magnetic" href="https://github.com/kusalb" target="_blank" rel="noopener">Explore all repositories ↗</a>
+        </div>
       </div>
-    </div>
-    <div class="proj-card reveal reveal-delay-1">
-      <div class="proj-num">P.02</div>
-      <div class="proj-title">Energy Prediction Models</div>
-      <div class="proj-desc">Benchmarked ARIMA, Random Forest, LSTM, and ConvLSTM for time-series energy forecasting. Hybrid ConvLSTM reduced MAPE by 5–10% vs standalone approaches.</div>
-      <div class="proj-tags"><span class="ptag">LSTM</span><span class="ptag">ConvLSTM</span><span class="ptag">ARIMA</span><span class="ptag">Time Series</span></div>
-    </div>
-    <div class="proj-card reveal reveal-delay-2">
-      <div class="proj-num">P.03</div>
-      <div class="proj-title">HR Management System</div>
-      <div class="proj-desc">Full-stack HRMS with employee records, leave management, payroll, rostering, and real-time analytics dashboards built for Gaaubesi Logistics.</div>
-      <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">PostgreSQL</span><span class="ptag">REST API</span><span class="ptag">Power BI</span></div>
-    </div>
-    <div class="proj-card reveal reveal-delay-1">
-      <div class="proj-num">P.04</div>
-      <div class="proj-title">Junkeri — Rainwater Harvest Analytics</div>
-      <div class="proj-desc">Predictive analytics for rainwater harvesting revenue. Integrated SARIMA rainfall forecasts with Mask R-CNN roof segmentation and depth estimation.</div>
-      <div class="proj-tags"><span class="ptag">Computer Vision</span><span class="ptag">SARIMA</span><span class="ptag">Mask R-CNN</span></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- GITHUB REPOS (live API) -->
-<section id="github">
-  <div class="gh-header">
-    <div>
-      <div class="sec-label reveal">07 — Open Source</div>
-      <h2 class="sec-title reveal reveal-delay-1" style="margin-bottom:0">GitHub<br><em>repositories</em></h2>
-    </div>
-    <a class="gh-link reveal" href="https://github.com/kusalb" target="_blank" rel="noopener noreferrer"><span>View all on GitHub ↗</span></a>
-  </div>
-  <div id="gh-grid">
-    <div class="gh-loading">
-      <span class="dot">·</span><span class="dot">·</span><span class="dot">·</span>
-      &nbsp; Loading repositories
-    </div>
-  </div>
-</section>
+    <section class="section section-pad experience-section depth-section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">04 / Experience</span>
+            <h2 id="experience-title">Technical depth,<br><em>operational context.</em></h2>
+          </div>
+          <p>
+            My edge is range: software engineering, finance operations, workforce systems, aged care and stakeholder-facing analytics.
+          </p>
+        </div>
 
-<!-- AWARDS -->
-<section id="awards">
-  <div class="sec-label reveal">08 — Awards</div>
-  <h2 class="sec-title reveal reveal-delay-1">Recognition &amp;<br><em>wins</em></h2>
-  <div class="awards-grid">
-    <div class="award-card reveal">
-      <div class="award-icon">🏆</div>
+        <div class="experience-layout">
+          <div class="timeline" id="experience-timeline"></div>
+
+          <aside class="experience-aside reveal">
+            <span class="mono-label">EDUCATION</span>
+            <div class="education-card">
+              <span>2023—2025</span>
+              <h3>Master of Artificial Intelligence & Machine Learning</h3>
+              <p>University of Adelaide</p>
+            </div>
+            <div class="education-card">
+              <span>2015—2019</span>
+              <h3>B.Sc. Computer Science & IT</h3>
+              <p>Deerwalk Institute of Technology</p>
+            </div>
+            <div class="education-card">
+              <span>2025</span>
+              <h3>Professional Year — Computer Science</h3>
+              <p>Performance Education</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pad credentials-section depth-section" id="credentials" aria-labelledby="credentials-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">05 / Credentials</span>
+            <h2 id="credentials-title">Always learning.<br><em>Always shipping.</em></h2>
+          </div>
+          <p>
+            Credentials currently documented in my professional profile. Each card links to the LinkedIn certification record until a direct credential URL is added.
+          </p>
+        </div>
+
+        <div class="credential-grid" id="credential-grid"></div>
+
+        <div class="credential-note reveal">
+          <span aria-hidden="true">ⓘ</span>
+          Direct verification URLs can be added in <code>data.js</code> without changing the page markup.
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pad about-section depth-section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-statement reveal">
+          <span class="section-kicker">06 / About</span>
+          <h2 id="about-title">
+            I translate between
+            <em>models, systems and people.</em>
+          </h2>
+        </div>
+
+        <div class="about-copy reveal">
+          <p class="about-lead">
+            I’m a self-driven AI/ML graduate and data professional with a software-engineering foundation
+            and hands-on experience inside operational teams.
+          </p>
+          <p>
+            That combination shapes how I work: understand the process, challenge the data, design the model,
+            and communicate the decision. I care about useful systems—not technology for its own sake.
+          </p>
+          <p>
+            Before moving into Australian aged-care analytics and finance systems, I built Django products,
+            led engineering work, taught programming and contributed to research and hackathon teams in Nepal.
+          </p>
+
+          <div class="about-values">
+            <div><span>01</span><strong>Evidence over theatre</strong></div>
+            <div><span>02</span><strong>Simple interfaces, rigorous systems</strong></div>
+            <div><span>03</span><strong>Responsible, human-centred AI</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container contact-shell reveal">
+        <span class="section-kicker">07 / Start a conversation</span>
+        <h2 id="contact-title">Have a hard data problem?</h2>
+        <p>Let’s turn it into a clear, useful system.</p>
+
+        <div class="contact-actions">
+          <a class="button button-light magnetic" href="mailto:grand.kusal.kb@gmail.com">
+            grand.kusal.kb@gmail.com
+            <span aria-hidden="true">↗</span>
+          </a>
+          <button class="button button-outline-light" id="copy-email" type="button" data-email="grand.kusal.kb@gmail.com">
+            Copy email
+          </button>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://github.com/kusalb" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/kusal-bista-657422132/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="assets/Kusal-Bista-Profile.pdf" target="_blank" rel="noopener">Profile PDF ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <div>
-        <div class="award-title">Best Presentation — AsianHack 2019</div>
-        <div class="award-desc">Developed a Smart Dustbin system using ultrasonic sensors and automated lid mechanisms. Awarded Best Presentation for ingenuity and practical application.</div>
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-mark">KB</span><span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <p>AI Engineer · IT Data Analyst · Adelaide, Australia</p>
       </div>
+      <p>© <span id="year"></span> Kusal Bista. Built for clarity, speed and impact.</p>
     </div>
-    <div class="award-card reveal reveal-delay-1">
-      <div class="award-icon">🥈</div>
-      <div>
-        <div class="award-title">2nd Best Prototype — Everest Hack 2019</div>
-        <div class="award-desc">Led Team 404 Found to 2nd place among international teams (selected from 1,500 applications, 20 countries). Built a healthcare analytics prototype using ML to match patients with optimal care.</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-bg-text">HIRE</div>
-  <h2 class="contact-headline reveal">Let's build<br>something <em>real.</em></h2>
-  <p class="contact-sub reveal reveal-delay-1">Open to data analytics, BI, AI/ML & full-stack roles · Adelaide, Australia</p>
-  <a href="mailto:kusal.more@gmail.com" class="contact-email reveal reveal-delay-2">kusal.more@gmail.com</a>
-  <div class="contact-links reveal reveal-delay-3">
-    <a href="https://github.com/kusalb" class="clink" target="_blank" rel="noopener noreferrer"><span>↗ GitHub</span></a>
-    <a href="https://www.instagram.com/gud_kush_/" class="clink" target="_blank" rel="noopener noreferrer"><span>↗ Instagram</span></a>
-    <a href="https://www.linkedin.com/in/kusal-bista-657422132" class="clink" target="_blank" rel="noopener noreferrer"><span>↗ LinkedIn</span></a>
-    <a href="tel:61451920541" class="clink"><span>↗ +61 451 920 541</span></a>
-    <a class="clink"><span>↗ Kurralta Park, Adelaide 5037</span></a>
-  </div>
-  <div class="footer">
-    <span>Kusal Bista · 2025</span>
-    <span>Master's in AI/ML · University of Adelaide</span>
-    <span>Built with intent. 🚀</span>
-  </div>
-</section>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><span>↑</span><i></i></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js" defer></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
