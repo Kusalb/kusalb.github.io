@@ -1,0 +1,17 @@
+IMMERSIVE 3D PORTFOLIO — GITHUB PAGES DEPLOYMENT
+
+1. Extract the ZIP.
+2. Upload every extracted file and folder directly to the ROOT of:
+   https://github.com/Kusalb/kusalb.github.io
+3. Commit the files to the main branch.
+4. In Settings > Pages choose:
+   Source: Deploy from a branch
+   Branch: main
+   Folder: / (root)
+
+IMPORTANT
+- index.html must be at the repository root.
+- Do not upload the outer extracted folder as a nested directory.
+- Keep CNAME to preserve kusalbista.com.np.
+- No Python, npm, React, Vite, API, server or build process is required.
+- Double-click index.html for a local preview.
