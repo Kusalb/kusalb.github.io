@@ -192,56 +192,56 @@ window.SITE_DATA = {
       "issuer": "Oracle University",
       "type": "Enterprise systems",
       "year": "Profile credential",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=134A09A56A718BA52A85F53AE8C7AA548494906EA93A76DB30E7A6FAF6696FFC"
     },
     {
       "title": "Oracle Fusion AI Agent Studio",
       "issuer": "Oracle University",
       "type": "Applied AI",
       "year": "2025",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=E95A417AE075366DCA1C334B0DC1DE9510B9C8D5F24F98CB5AE66B61D5896337"
     },
     {
       "title": "Google Business Intelligence",
       "issuer": "Google · Coursera",
       "type": "Business intelligence",
       "year": "2025",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/PIS9GBLO07G7"
     },
     {
       "title": "Data Models and Pipelines",
       "issuer": "Google · Coursera",
       "type": "Data engineering",
       "year": "2024",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/UQ8STN8PF91P"
     },
     {
       "title": "Decisions, Decisions: Dashboards and Reports",
       "issuer": "Google · Coursera",
       "type": "Data visualisation",
       "year": "2024",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/UPPBBCV7VSSC"
     },
     {
       "title": "Building Trust with Business Ethics",
       "issuer": "Professional development",
       "type": "Ethics",
       "year": "Profile credential",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://skillsoft.digitalbadges.skillsoft.com/2e2ca9ff-ba66-466a-adc2-bf7d6da516b9"
     },
     {
       "title": "Mastering Teamwork for Effective Collaboration",
       "issuer": "Professional development",
       "type": "Collaboration",
       "year": "Profile credential",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://skillsoft.digitalbadges.skillsoft.com/70fe7a38-1af4-4cde-b2d3-fb2c59b4b8db"
     },
     {
       "title": "Managing a Hybrid Team Successfully",
       "issuer": "Professional development",
       "type": "Leadership",
       "year": "Profile credential",
-      "credentialUrl": "https://www.linkedin.com/in/kusal-bista-657422132/details/certifications/"
+      "credentialUrl": "https://skillsoft.digitalbadges.skillsoft.com/145f73e0-912e-4aad-ab5b-40d28761b6be"
     }
   ]
 };
