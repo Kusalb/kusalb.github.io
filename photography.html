@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A cinematic photography portfolio by Kusal Bista — landscapes, streets, portraits and architectural stories.">
+  <meta name="author" content="Kusal Bista">
+  <meta name="theme-color" content="#0b0b0a">
+
+  <title>Kusal Bista — Photography</title>
+
+  <link rel="canonical" href="https://kusalbista.com.np/photography.html">
+  <link rel="icon" type="image/svg+xml" href="icon-kb.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kusal Bista — Photography">
+  <meta property="og:description" content="Stories shaped by light, place and human presence.">
+  <meta property="og:url" content="https://kusalbista.com.np/photography.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap">
+  <link rel="stylesheet" href="photography.css">
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to selected work</a>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Photography navigation">
+      <a class="brand" href="#top" aria-label="Kusal Photography home">
+        <strong>Kusal</strong>
+        <span>Photography</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#work">Selected work</a>
+        <a href="#about">Approach</a>
+        <a href="#contact">Enquiries</a>
+      </div>
+
+      <a class="back-link" href="index.html">Main portfolio ↙</a>
+
+      <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-links">
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img id="hero-image" src="assets/photos/1.jpg" alt="">
+      </div>
+
+      <div class="hero-content">
+        <div>
+          <p class="hero-kicker">Adelaide · Available worldwide</p>
+          <h1 id="hero-title">Light.<span>Place.</span>Human.</h1>
+        </div>
+
+        <div class="hero-side">
+          <p>
+            Quiet observations, cinematic landscapes and honest portraits—made with
+            patience, precision and respect for the moment.
+          </p>
+          <a class="scroll-cue" href="#work">
+            <i aria-hidden="true">↓</i>
+            View selected work
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="reveal">
+        <div class="section-label"><span>01</span> Artist statement</div>
+        <h2 id="intro-title">The extraordinary lives inside the ordinary.</h2>
+      </div>
+
+      <div class="intro-copy reveal">
+        <p class="lead">
+          Photography is an act of attention: noticing the shape of silence,
+          the architecture of light and the fleeting gestures that reveal who we are.
+        </p>
+        <p>
+          This portfolio brings together personal and commissioned visual stories.
+          Each frame is composed to feel immediate now—and resonant years from now.
+        </p>
+      </div>
+    </section>
+
+    <section class="collection" id="work" aria-labelledby="work-title">
+      <div class="collection-heading reveal">
+        <div>
+          <div class="section-label"><span>02</span> Selected photographs</div>
+          <h2 id="work-title">A study in atmosphere.</h2>
+        </div>
+
+        <div class="filters" aria-label="Filter photographs">
+          <button class="filter active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="landscape">Landscape</button>
+          <button class="filter" type="button" data-filter="street">Street</button>
+          <button class="filter" type="button" data-filter="portrait">Portrait</button>
+          <button class="filter" type="button" data-filter="architecture">Architecture</button>
+        </div>
+      </div>
+
+      <div class="gallery" id="gallery" aria-live="polite"></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Editorial</span><i>✦</i>
+        <span>Portrait</span><i>✦</i>
+        <span>Travel</span><i>✦</i>
+        <span>Architecture</span><i>✦</i>
+        <span>Fine Art</span><i>✦</i>
+        <span>Editorial</span><i>✦</i>
+        <span>Portrait</span><i>✦</i>
+        <span>Travel</span><i>✦</i>
+        <span>Architecture</span><i>✦</i>
+        <span>Fine Art</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-media">
+        <img id="about-image" src="assets/photos/2.jpg" alt="Featured photography portfolio image">
+      </div>
+
+      <div class="about-copy reveal">
+        <div>
+          <div class="section-label"><span>03</span> Approach</div>
+          <h2 id="about-title">Made slowly. Felt immediately.</h2>
+        </div>
+
+        <div class="about-text">
+          <p>
+            I work with natural light, thoughtful direction and an editorial eye.
+            The process is collaborative and calm, giving people and places enough
+            space to become themselves.
+          </p>
+
+          <div class="disciplines" aria-label="Photography disciplines">
+            <div>Editorial &amp; campaign <span>01</span></div>
+            <div>Portrait &amp; people <span>02</span></div>
+            <div>Travel &amp; landscape <span>03</span></div>
+            <div>Architecture &amp; place <span>04</span></div>
+            <div>Fine-art prints <span>05</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner reveal">
+        <div class="section-label"><span>04</span> Commission &amp; collaboration</div>
+        <h2 id="contact-title">
+          Let’s make something<br>
+          <em>worth remembering.</em>
+        </h2>
+        <a class="contact-link" href="mailto:kusal.more@gmail.com?subject=Photography%20enquiry">
+          Start a conversation <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Kusal Photography</strong>
+      <p>Adelaide, Australia · Available worldwide</p>
+    </div>
+    <div>
+      <p>© <span id="year"></span> Kusal Bista</p>
+    </div>
+  </footer>
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Photograph viewer"
+    aria-hidden="true">
+
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close viewer">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photograph">←</button>
+
+    <div class="lightbox-stage">
+      <img id="lightbox-image" src="" alt="">
+    </div>
+
+    <div class="lightbox-info">
+      <div class="lightbox-count" id="lightbox-count"></div>
+      <h3 id="lightbox-title"></h3>
+      <p id="lightbox-detail"></p>
+    </div>
+
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next photograph">→</button>
+  </div>
+
+  <script src="photography.js"></script>
+</body>
+</html>
